@@ -38,19 +38,30 @@ print(f"Total Votes: {total_votes}")
 
 print("---------------------------")
 
-for candidate in candidate_votes:
-    votes = candidate_votes[candidate]
-    percentage_votes = float(votes) / float(total_votes) * 100
-    if (votes > total_votes_won):
-        total_votes_won = votes
-        popular_vote_winner = candidate
+Filetowrite = os.path.join("Analysis","Election_Analysis.txc")
+with open(Filetowrite, "w") as textfile:
+    textfile.write(f"Election Results")
 
-    #Print Names/Percentage Votes/Vote Count
+    textfile.write(f"---------------------------")
 
-    print(f"{candidate}:, {percentage_votes}, {votes}")
+    textfile.write(f"Total Votes: {total_votes}")
 
-#Print Winner Name
+    textfile.write(f"---------------------------")
 
-print(f"Winner: {popular_vote_winner}")
+    for candidate in candidate_votes:
+        votes = candidate_votes[candidate]
+        percentage_votes = float(votes) / float(total_votes) * 100
+        if (votes > total_votes_won):
+            total_votes_won = votes
+            popular_vote_winner = candidate
+
+        #Print Names/Percentage Votes/Vote Count
+
+        print(f"{candidate}:, {percentage_votes}, {votes}")
+        textfile.write(f"{candidate}:, {percentage_votes}, {votes}")   
+    #Print Winner Name
+
+    print(f"Winner: {popular_vote_winner}")
+    textfile.write(f"Winner: {popular_vote_winner}")
 
         

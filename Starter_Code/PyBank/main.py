@@ -52,3 +52,14 @@ print(f"Total: ${net_total_profit_losses}")
 print(f"Average Change: ${average_profit_losses}")
 print(f"Greatest Increase in Profits: ${max_increase_profits}")
 print(f"Greatest Decrease in Profits: ${max_decrease_profits}")
+
+Filetowrite = os.path.join("Analysis","Bank_Analysis.txc")
+with open(Filetowrite, "w") as textfile:
+    textfile.write(f"Financial Analysis")
+    textfile.write(f"---------------------------")
+
+    textfile.write(f"Total Months: {total_months}")
+    textfile.write(f"Total: ${net_total_profit_losses}")
+    textfile.write(f"Average Change: ${average_profit_losses}")
+    textfile.write(f"Greatest Increase in Profits: ${max_increase_profits}")
+    textfile.write(f"Greatest Decrease in Profits: ${max_decrease_profits}")
