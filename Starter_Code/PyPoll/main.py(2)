@@ -1,0 +1,21 @@
+import os
+import csv
+
+#Variables
+total_votes = 0
+candidate_list = 0
+percentage_votes_won = 0
+total_votes_won = 0
+popular_vote_winner = 0
+
+#Path to Import CSV File
+pypoll_file = os.path.join(".", "Resources", "election_data.csv")
+
+#Open and Read CSV File
+with open(pypoll_file) as csv_file:
+    csv_reader = csv.reader(csv_file, delimiter=",")
+    next(csv_reader)
+
+#Loop Through Rows
+    
+
